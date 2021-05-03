@@ -1,0 +1,12 @@
+docker exec -it kanban-postgres pgbench --username postgres --client 8 --jobs 8 --transactions 1000
+starting vacuum...end.
+transaction type: <builtin: TPC-B (sort of)>
+scaling factor: 1
+query mode: simple
+number of clients: 8
+number of threads: 8
+number of transactions per client: 1000
+number of transactions actually processed: 8000/8000
+latency average = 2.530 ms
+tps = 3162.045587 (including connections establishing)
+tps = 3168.014678 (excluding connections establishing)

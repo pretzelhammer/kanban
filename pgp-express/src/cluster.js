@@ -1,0 +1,2 @@
+// single-threaded
+require('./main');

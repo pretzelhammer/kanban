@@ -1,0 +1,8 @@
+GET http://localhost:8000/api/boards
+Authorization: Bearer LET_ME_IN
+
+GET http://localhost:8000/api/boards/1/summary
+Authorization: Bearer LET_ME_IN
+
+GET http://localhost:8000/api/boards/1/cards
+Authorization: Bearer LET_ME_IN

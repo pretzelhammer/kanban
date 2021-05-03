@@ -1,0 +1,4 @@
+# override dev, staging, and prod envs
+[global]
+address = "127.0.0.1"
+port = 8000

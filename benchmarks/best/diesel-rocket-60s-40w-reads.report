@@ -1,0 +1,20 @@
+Requests      [total, rate, throughput]         13971, 231.22, 198.12
+Duration      [total, attack, wait]             1m10s, 1m0s, 10.034s
+Latencies     [min, mean, 50, 90, 95, 99, max]  6.178ms, 173.741ms, 27.678ms, 318.932ms, 326.678ms, 1.326s, 15.038s
+Bytes In      [total, mean]                     2661222, 190.48
+Bytes Out     [total, mean]                     0, 0.00
+Success       [ratio]                           99.91%
+Status Codes  [code:count]                      0:12  200:13959  
+Error Set:
+Get "http://localhost:8000/api/boards/1/summary": read tcp 127.0.0.1:50514->127.0.0.1:8000: read: connection reset by peer
+Get "http://localhost:8000/api/boards": read tcp 127.0.0.1:50505->127.0.0.1:8000: read: connection reset by peer
+Get "http://localhost:8000/api/boards/1/summary": read tcp 127.0.0.1:50501->127.0.0.1:8000: read: connection reset by peer
+Get "http://localhost:8000/api/boards/1/cards": read tcp 127.0.0.1:50507->127.0.0.1:8000: read: connection reset by peer
+Get "http://localhost:8000/api/boards/1/summary": read tcp 127.0.0.1:50503->127.0.0.1:8000: read: connection reset by peer
+Get "http://localhost:8000/api/boards": read tcp 127.0.0.1:50509->127.0.0.1:8000: read: connection reset by peer
+Get "http://localhost:8000/api/boards/1/cards": read tcp 127.0.0.1:50513->127.0.0.1:8000: read: connection reset by peer
+Get "http://localhost:8000/api/boards/1/cards": read tcp 127.0.0.1:50512->127.0.0.1:8000: read: connection reset by peer
+Get "http://localhost:8000/api/boards": read tcp 127.0.0.1:50502->127.0.0.1:8000: read: connection reset by peer
+Get "http://localhost:8000/api/boards/1/cards": read tcp 127.0.0.1:50510->127.0.0.1:8000: read: connection reset by peer
+Get "http://localhost:8000/api/boards/1/cards": read tcp 127.0.0.1:50508->127.0.0.1:8000: read: connection reset by peer
+Get "http://localhost:8000/api/boards": read tcp 127.0.0.1:50504->127.0.0.1:8000: read: connection reset by peer

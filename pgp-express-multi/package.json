@@ -1,0 +1,36 @@
+{
+  "name": "kanban",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/cluster.js",
+    "run-migrations": "node migrations.js",
+    "take-nap": "sleep 2",
+    "db-up": "docker run --rm --name kanban-postgres --tmpfs=/pgtmpfs --env PGDATA=/pgtmpfs --env POSTGRES_HOST_AUTH_METHOD=trust --publish 5432:5432 --detach postgres:13",
+    "db-down": "docker stop kanban-postgres",
+    "start-dev": "npm run db-up && npm run take-nap && npm run run-migrations",
+    "stop-dev": "npm run db-down",
+    "restart-dev": "npm run stop-dev && npm run start-dev",
+    "psql": "docker exec -it kanban-postgres psql -U postgres",
+    "get-index": "curl --include http://localhost:8000/",
+    "get-boards": "curl --header \"Authorization: Bearer LET_ME_IN\" --include http://localhost:8000/api/boards",
+    "get-board-summary": "curl --header \"Authorization: Bearer LET_ME_IN\" --include http://localhost:8000/api/boards/1/summary",
+    "post-board": "curl --header \"Authorization: Bearer LET_ME_IN\" --header \"Content-Type: application/json\" --request POST --data '{\"name\": \"Created Test Board from CURL\"}' --include http://localhost:8000/api/boards",
+    "delete-board": "curl --header \"Authorization: Bearer LET_ME_IN\" --request DELETE --include http://localhost:8000/api/boards/3",
+    "get-cards": "curl --header \"Authorization: Bearer LET_ME_IN\" --include http://localhost:8000/api/boards/1/cards",
+    "post-card": "curl --header \"Authorization: Bearer LET_ME_IN\" --header \"Content-Type: application/json\" --request POST --data '{\"boardId\": 1, \"description\": \"Created Test Card from CURL\"}' --include http://localhost:8000/api/cards",
+    "patch-card": "curl --header \"Authorization: Bearer LET_ME_IN\" --header \"Content-Type: application/json\" --request PATCH --data '{\"description\": \"Updated description from CURL\", \"status\": \"doing\"}' --include http://localhost:8000/api/cards/1",
+    "delete-card": "curl --header \"Authorization: Bearer LET_ME_IN\" --request DELETE --include http://localhost:8000/api/cards/3"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "pg": "^8.6.0",
+    "pg-native": "^3.0.0",
+    "pg-promise": "^10.10.1",
+    "physical-cpu-count": "^2.0.0"
+  }
+}

@@ -1,0 +1,21 @@
+Requests      [total, rate, throughput]         15455, 253.26, 188.32
+Duration      [total, attack, wait]             1m6s, 1m1s, 4.981s
+Latencies     [min, mean, 50, 90, 95, 99, max]  35.528µs, 164.5ms, 26.017ms, 313.756ms, 323.253ms, 1.428s, 14.772s
+Bytes In      [total, mean]                     118362905, 7658.55
+Bytes Out     [total, mean]                     205473, 13.29
+Success       [ratio]                           80.43%
+Status Codes  [code:count]                      0:3025  200:12430  
+Error Set:
+Delete "http://localhost:8000/api/cards/1000000": http: server closed idle connection
+Post "http://localhost:8000/api/cards": http: server closed idle connection
+Post "http://localhost:8000/api/boards": http: server closed idle connection
+Delete "http://localhost:8000/api/boards/1000000": EOF
+Patch "http://localhost:8000/api/cards/1": http: server closed idle connection
+Post "http://localhost:8000/api/cards": EOF
+Delete "http://localhost:8000/api/boards/1000000": http: server closed idle connection
+Post "http://localhost:8000/api/boards": EOF
+Patch "http://localhost:8000/api/cards/1": EOF
+Delete "http://localhost:8000/api/cards/1000000": EOF
+Get "http://localhost:8000/api/boards/1/summary": read tcp 127.0.0.1:60865->127.0.0.1:8000: read: connection reset by peer
+Delete "http://localhost:8000/api/boards/1000000": read tcp 127.0.0.1:60967->127.0.0.1:8000: read: connection reset by peer
+Delete "http://localhost:8000/api/boards/1000000": read tcp 127.0.0.1:55200->127.0.0.1:8000: read: connection reset by peer

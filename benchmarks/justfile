@@ -1,0 +1,62 @@
+bench-dr:
+    cat targets.txt | vegeta attack -duration=5s -rate=0 -max-workers=5 | tee dr-5s-5w.bin | vegeta report
+
+bench-sa:
+    cat targets.txt | vegeta attack -duration=10s -rate=0 -max-workers=10 | tee sa-10s-10w.bin | vegeta report
+
+bench-ep:
+    cat targets.txt | vegeta attack -duration=10s -rate=0 -max-workers=10 | tee ep-10s-10w.bin | vegeta report
+
+
+db-up:
+    docker run --rm --name kanban-postgres --tmpfs=/pgtmpfs --env PGDATA=/pgtmpfs --env POSTGRES_HOST_AUTH_METHOD=trust --publish 5432:5432 --detach postgres:13
+
+db-down:
+    docker stop kanban-postgres
+
+pgbench-init:
+    docker exec -it kanban-postgres pgbench --username postgres --initialize
+
+pgbench-reads:
+    docker exec -it kanban-postgres pgbench --username postgres --client 8 --jobs 8 --transactions 1000 --select-only
+
+pgbench-mixed:
+    docker exec -it kanban-postgres pgbench --username postgres --client 8 --jobs 8 --transactions 1000
+
+
+pgbench: db-up take-nap pgbench-init take-nap pgbench-reads take-nap pgbench-mixed db-down
+
+
+take-nap:
+    sleep 2
+
+
+# should try:
+#   - 20w for 20s
+#   - 30w for 30s
+#   - 40w for 40s
+#   - 50w for 50s
+#   - 60w for 60s
+
+
+# https://github.com/rousan/rust-web-frameworks-benchmark
+# https://matej.laitl.cz/bench-actix-rocket/
+# https://developers.google.com/style/word-list
+# https://stackoverflow.blog/2020/10/14/improve-database-performance-with-connection-pooling/
+# https://www.enterprisedb.com/postgres-tutorials/why-you-should-use-connection-pooling-when-setting-maxconnections-postgres
+# https://wiki.postgresql.org/wiki/Number_Of_Database_Connections
+# https://docs.docker.com/engine/reference/run/#cpuset-constraint
+# https://rmariano.eu/posts/running-postgresql-in-memory-with-docker/
+# https://en.wikipedia.org/wiki/Tmpfs
+# https://docs.docker.com/engine/reference/run/#tmpfs-mount-tmpfs-filesystems
+# https://stackoverflow.com/questions/42226418/how-to-move-postresql-to-ram-disk-in-docker
+# https://github.com/sameersbn/docker-postgresql/issues/30
+# https://github.com/docker/for-mac/issues/2716
+# https://developer.apple.com/forums/thread/110604
+# https://unix.stackexchange.com/questions/554/how-to-monitor-cpu-memory-usage-of-a-single-process
+# https://unix.stackexchange.com/questions/554/how-to-monitor-cpu-memory-usage-of-a-single-process/508799#508799?newreg=fe9279dae99c4912871366c6ae89200d
+# https://developer.apple.com/forums/thread/672409
+# https://developer.apple.com/forums/thread/668351
+# https://developer.apple.com/forums/thread/667032
+# https://apple.stackexchange.com/questions/64948/how-to-record-cpu-and-memory-usage-data
+

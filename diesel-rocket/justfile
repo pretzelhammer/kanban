@@ -1,0 +1,77 @@
+# rocket requires the nightly compiler
+set-nightly:
+    rustup override set nightly
+
+# must run this before running any of the migration commands
+# must have DB running & DATABASE_URL env var for this command to work
+setup-diesel:
+    diesel setup
+
+create-migration name:
+    diesel migration generate {{name}}
+
+# must have DB running & DATABASE_URL env var for this command to work
+run-migrations:
+    diesel migration run
+
+# must have DB running & DATABASE_URL env var for this command to work
+write-schema:
+    diesel print-schema > ./src/schema.rs
+
+take-nap:
+    sleep 2
+
+db-up:
+    docker run --rm --name kanban-postgres -e POSTGRES_HOST_AUTH_METHOD=trust -p 5432:5432 -d postgres:13
+
+start-dev: db-up take-nap run-migrations
+
+db-down:
+    docker stop kanban-postgres
+
+stop-dev: db-down
+
+restart-dev: stop-dev start-dev
+
+# connect psql to db container if it's running
+psql:
+    docker exec -it kanban-postgres psql -U postgres
+
+# connect bash to db container if it's running
+bash:
+    docker exec -it kanban-postgres bash
+
+build-native:
+    RUSTFLAGS="-C target-cpu=native" cargo build --release
+
+run-native:
+    RUSTFLAGS="-C target-cpu=native" cargo run --release
+
+get-index:
+    curl --include http://localhost:8000/
+
+get-boards:
+    curl --header "Authorization: Bearer LET_ME_IN" --include http://localhost:8000/api/boards
+
+get-board-summary:
+    curl --header "Authorization: Bearer LET_ME_IN" --include http://localhost:8000/api/boards/1/summary
+
+post-board:
+    curl --header "Authorization: Bearer LET_ME_IN" --header "Content-Type: application/json" --request POST --data '{"name": "Created Test Board from CURL"}' --include http://localhost:8000/api/boards
+
+delete-board board-id='1000':
+    curl --header "Authorization: Bearer LET_ME_IN" --request DELETE --include http://localhost:8000/api/boards/{{board-id}}
+
+get-cards board-id='1':
+    curl --header "Authorization: Bearer LET_ME_IN" --include http://localhost:8000/api/boards/{{board-id}}/cards
+
+post-card board-id='1':
+    curl --header "Authorization: Bearer LET_ME_IN" --header "Content-Type: application/json" --request POST --data '{"boardId": {{board-id}}, "description": "Created Test Card from CURL"}' --include http://localhost:8000/api/cards
+
+patch-card card-id='1':
+    curl --header "Authorization: Bearer LET_ME_IN" --header "Content-Type: application/json" --request PATCH --data '{"description": "Updated description from CURL", "status": "doing"}' --include http://localhost:8000/api/cards/{{card-id}}
+
+delete-card card-id='1000':
+    curl --header "Authorization: Bearer LET_ME_IN" --request DELETE --include http://localhost:8000/api/cards/{{card-id}}
+
+test-api: get-index get-boards get-cards get-board-summary post-board post-card patch-card delete-board delete-card

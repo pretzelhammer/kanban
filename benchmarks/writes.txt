@@ -1,0 +1,20 @@
+POST http://localhost:8000/api/boards
+Authorization: Bearer LET_ME_IN
+Content-Type: application/json
+@post-board.json
+
+DELETE http://localhost:8000/api/boards/1000000
+Authorization: Bearer LET_ME_IN
+
+POST http://localhost:8000/api/cards
+Authorization: Bearer LET_ME_IN
+Content-Type: application/json
+@post-card.json
+
+PATCH http://localhost:8000/api/cards/1
+Authorization: Bearer LET_ME_IN
+Content-Type: application/json
+@patch-card.json
+
+DELETE http://localhost:8000/api/cards/1000000
+Authorization: Bearer LET_ME_IN
