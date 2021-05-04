@@ -2,9 +2,12 @@
 
 reqs
 
+Have docker installed, and also:
+
 ```bash
+brew update && brew install vegeta
 python3 -m install psutil
-nvm use 16.0.0
+nvm use 16.0.0 # only necessary to run the node benchmarks
 cargo install just
 rustup override set nightly
 ```
