@@ -1,5 +1,7 @@
 ## Diesel + Rocket
 
+This is the full source code for the Diesel + Rocket server implemented in the article [Kanban Backend in Rust](#) on my [Rust blog](https://github.com/pretzelhammer/rust-blog).
+
 Useful `just` commands:
 
 ```bash

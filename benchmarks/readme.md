@@ -1,6 +1,8 @@
-## benchmarks
+## Benchmarks
 
-reqs
+This is the source code for the benchmarks run in the article [Kanban Backend in Rust](#) on my [Rust blog](https://github.com/pretzelhammer/rust-blog).
+
+Prerequisites:
 
 Have docker installed, and also:
 
@@ -12,7 +14,7 @@ cargo install just
 rustup override set nightly
 ```
 
-commands
+Example commands:
 
 ```bash
 bash run_bench.sh ../diesel-rocket 60 40 reads
