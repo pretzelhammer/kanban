@@ -1,6 +1,6 @@
-## pgp express.js multi process
+## pg-promise + express.js (multi process)
 
-useful npm commands
+Useful NPM scripts:
 
 ```bash
 npm start-dev # spin up DB container & run migrations

@@ -1,6 +1,6 @@
-## pgp express.js single process
+## pg-promise + express.js (single process)
 
-useful npm commands
+Useful NPM scripts:
 
 ```bash
 npm start-dev # spin up DB container & run migrations
