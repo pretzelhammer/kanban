@@ -1,6 +1,6 @@
-## Kanban Backend in Rust
+## Source Code for RESTful API in Sync & Async Rust article
 
-This is the companion code repository for the article [Kanban Backend in Rust](#) on my [Rust blog](https://github.com/pretzelhammer/rust-blog).
+This is the companion code repository for the article [RESTful API in Sync & Async Rust](https://github.com/pretzelhammer/rust-blog/blob/master/posts/restful-api-in-sync-and-async-rust.md) on my [Rust blog](https://github.com/pretzelhammer/rust-blog).
 
 ### Servers
 
