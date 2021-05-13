@@ -66,7 +66,10 @@ project_bin="${project_name}-${duration}s-${workers}w-${targets}.bin"
 project_report="${project_name}-${duration}s-${workers}w-${targets}.report"
 
 python3 monitor_process.py $duration $server_pid > data/$project_csv &
-cat $targets_file | vegeta attack -duration=${duration}s -rate=0 -max-workers=${workers} > data/$project_bin
+# warm up
+cat $targets_file | vegeta attack -http2 -duration=10s -rate=0 -max-workers=${workers} > /dev/null
+# the real loadtest
+cat $targets_file | vegeta attack -http2 -duration=${duration}s -rate=0 -max-workers=${workers} > data/$project_bin
 cat data/$project_bin | vegeta report > data/$project_report
 rm data/$project_bin
 

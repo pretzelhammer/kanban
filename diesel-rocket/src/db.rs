@@ -20,8 +20,8 @@ impl Db {
         let db_url = env::var("DATABASE_URL")?;
         let manager = r2d2::ConnectionManager::new(db_url);
         let pool = r2d2::Builder::new()
-            .max_size(100)
-            .min_idle(Some(50))
+            .max_size(20)
+            .min_idle(Some(10))
             .build(manager)?;
         Ok(Db { pool })
     }
