@@ -19,7 +19,7 @@ write-schema:
     diesel print-schema > ./src/schema.rs
 
 take-nap:
-    sleep 2
+    sleep 3
 
 db-up:
     docker run --rm --name kanban-postgres --tmpfs=/pgtmpfs --env PGDATA=/pgtmpfs --env POSTGRES_HOST_AUTH_METHOD=trust --publish 5432:5432 --detach postgres:13

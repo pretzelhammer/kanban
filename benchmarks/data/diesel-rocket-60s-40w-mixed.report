@@ -1,71 +1,19 @@
-Requests      [total, rate, throughput]         26365, 439.36, 350.63
-Duration      [total, attack, wait]             1m0s, 1m0s, 63.895ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  35.68µs, 91.076ms, 22.229ms, 317.442ms, 329.293ms, 356.743ms, 13.617s
-Bytes In      [total, mean]                     323118466, 12255.58
-Bytes Out     [total, mean]                     346808, 13.15
-Success       [ratio]                           79.89%
-Status Codes  [code:count]                      0:5302  200:21063  
+Requests      [total, rate, throughput]         55807, 930.01, 772.16
+Duration      [total, attack, wait]             1m0s, 1m0s, 28.51ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  56.96µs, 33.374ms, 27.197ms, 68.285ms, 86.326ms, 127.239ms, 296.64ms
+Bytes In      [total, mean]                     1558143791, 27920.22
+Bytes Out     [total, mean]                     785191, 14.07
+Success       [ratio]                           83.07%
+Status Codes  [code:count]                      0:9450  200:46357  
 Error Set:
-Delete "http://localhost:8000/api/boards/1000000": http: server closed idle connection
-Delete "http://localhost:8000/api/cards/1000000": http: server closed idle connection
-Post "http://localhost:8000/api/cards": http: server closed idle connection
 Post "http://localhost:8000/api/boards": http: server closed idle connection
+Delete "http://localhost:8000/api/cards/1000000": http: server closed idle connection
+Post "http://localhost:8000/api/cards": EOF
+Delete "http://localhost:8000/api/boards/1000000": http: server closed idle connection
 Patch "http://localhost:8000/api/cards/1": http: server closed idle connection
-Patch "http://localhost:8000/api/cards/1": EOF
+Post "http://localhost:8000/api/cards": http: server closed idle connection
+Delete "http://localhost:8000/api/boards/1000000": EOF
 Delete "http://localhost:8000/api/cards/1000000": EOF
 Post "http://localhost:8000/api/boards": EOF
-Post "http://localhost:8000/api/cards": EOF
-Delete "http://localhost:8000/api/boards/1000000": EOF
-Post "http://localhost:8000/api/cards": read tcp 127.0.0.1:59309->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/boards": read tcp 127.0.0.1:57039->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/cards/1000000": read tcp 127.0.0.1:57032->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/cards": read tcp 127.0.0.1:57050->127.0.0.1:8000: read: connection reset by peer
-Patch "http://localhost:8000/api/cards/1": read tcp 127.0.0.1:57048->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/boards/1000000": read tcp 127.0.0.1:57047->127.0.0.1:8000: read: connection reset by peer
-Patch "http://localhost:8000/api/cards/1": read tcp 127.0.0.1:57064->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/boards/1000000": read tcp 127.0.0.1:57065->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/boards": read tcp 127.0.0.1:57073->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/cards": read tcp 127.0.0.1:57069->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/boards": read tcp 127.0.0.1:57080->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/boards/1000000": read tcp 127.0.0.1:57086->127.0.0.1:8000: read: connection reset by peer
-Patch "http://localhost:8000/api/cards/1": read tcp 127.0.0.1:57092->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/cards": read tcp 127.0.0.1:57094->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/cards/1000000": read tcp 127.0.0.1:57089->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/boards": read tcp 127.0.0.1:57184->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/boards/1000000": read tcp 127.0.0.1:57197->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/cards/1000000": read tcp 127.0.0.1:51641->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/cards": read tcp 127.0.0.1:53693->127.0.0.1:8000: read: connection reset by peer
-Patch "http://localhost:8000/api/cards/1": read tcp 127.0.0.1:59427->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/cards/1000000": read tcp 127.0.0.1:53702->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/cards/1000000": read tcp 127.0.0.1:50687->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/boards/1000000": read tcp 127.0.0.1:50710->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/cards": read tcp 127.0.0.1:50734->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/boards": read tcp 127.0.0.1:50721->127.0.0.1:8000: read: connection reset by peer
-Patch "http://localhost:8000/api/cards/1": read tcp 127.0.0.1:50717->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/cards/1000000": read tcp 127.0.0.1:50741->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/boards": read tcp 127.0.0.1:50751->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/boards/1000000": read tcp 127.0.0.1:50754->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/cards": read tcp 127.0.0.1:50766->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/cards/1000000": read tcp 127.0.0.1:50774->127.0.0.1:8000: read: connection reset by peer
-Patch "http://localhost:8000/api/cards/1": read tcp 127.0.0.1:50778->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/boards/1000000": read tcp 127.0.0.1:50825->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/cards": read tcp 127.0.0.1:50837->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/boards": read tcp 127.0.0.1:50827->127.0.0.1:8000: read: connection reset by peer
-Patch "http://localhost:8000/api/cards/1": read tcp 127.0.0.1:50872->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/cards/1000000": read tcp 127.0.0.1:50852->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/cards": read tcp 127.0.0.1:61733->127.0.0.1:8000: read: connection reset by peer
-Patch "http://localhost:8000/api/cards/1": read tcp 127.0.0.1:61732->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/boards/1000000": read tcp 127.0.0.1:61738->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/boards": read tcp 127.0.0.1:61740->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/cards/1000000": read tcp 127.0.0.1:61731->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/cards/1000000": read tcp 127.0.0.1:61743->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/cards": read tcp 127.0.0.1:61742->127.0.0.1:8000: read: connection reset by peer
-Patch "http://localhost:8000/api/cards/1": read tcp 127.0.0.1:64911->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/cards/1000000": read tcp 127.0.0.1:64918->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/boards": read tcp 127.0.0.1:64928->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/boards/1000000": read tcp 127.0.0.1:64929->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/cards": read tcp 127.0.0.1:64927->127.0.0.1:8000: read: connection reset by peer
-Patch "http://localhost:8000/api/cards/1": read tcp 127.0.0.1:64933->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/cards/1000000": read tcp 127.0.0.1:64935->127.0.0.1:8000: read: connection reset by peer
-Post "http://localhost:8000/api/boards": read tcp 127.0.0.1:64940->127.0.0.1:8000: read: connection reset by peer
-Delete "http://localhost:8000/api/boards/1000000": read tcp 127.0.0.1:64939->127.0.0.1:8000: read: connection reset by peer
+Patch "http://localhost:8000/api/cards/1": EOF
+Delete "http://localhost:8000/api/cards/1000000": read tcp 127.0.0.1:48671->127.0.0.1:8000: read: connection reset by peer

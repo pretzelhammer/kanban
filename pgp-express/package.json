@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/cluster.js",
     "run-migrations": "node migrations.js",
-    "take-nap": "sleep 2",
+    "take-nap": "sleep 3",
     "db-up": "docker run --rm --name kanban-postgres --tmpfs=/pgtmpfs --env PGDATA=/pgtmpfs --env POSTGRES_HOST_AUTH_METHOD=trust --publish 5432:5432 --detach postgres:13",
     "db-down": "docker stop kanban-postgres",
     "start-dev": "npm run db-up && npm run take-nap && npm run run-migrations",

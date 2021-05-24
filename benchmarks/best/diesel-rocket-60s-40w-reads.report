@@ -1,17 +1,8 @@
-Requests      [total, rate, throughput]         23571, 391.92, 391.67
-Duration      [total, attack, wait]             1m0s, 1m0s, 14.569ms
-Latencies     [min, mean, 50, 90, 95, 99, max]  6.817ms, 102.054ms, 26.549ms, 316.433ms, 327.672ms, 513.687ms, 1.779s
-Bytes In      [total, mean]                     4492091, 190.58
+Requests      [total, rate, throughput]         171431, 2857.17, 2856.81
+Duration      [total, attack, wait]             1m0s, 1m0s, 7.532ms
+Latencies     [min, mean, 50, 90, 95, 99, max]  856.182µs, 11.479ms, 10.323ms, 19.885ms, 23.426ms, 31.984ms, 109.602ms
+Bytes In      [total, mean]                     32686045, 190.67
 Bytes Out     [total, mean]                     0, 0.00
-Success       [ratio]                           99.96%
-Status Codes  [code:count]                      0:9  200:23562  
+Success       [ratio]                           100.00%
+Status Codes  [code:count]                      200:171431  
 Error Set:
-Get "http://localhost:8000/api/boards/1/cards": read tcp 127.0.0.1:62470->127.0.0.1:8000: read: connection reset by peer
-Get "http://localhost:8000/api/boards/1/summary": read tcp 127.0.0.1:62482->127.0.0.1:8000: read: connection reset by peer
-Get "http://localhost:8000/api/boards": read tcp 127.0.0.1:53653->127.0.0.1:8000: read: connection reset by peer
-Get "http://localhost:8000/api/boards/1/cards": read tcp 127.0.0.1:53664->127.0.0.1:8000: read: connection reset by peer
-Get "http://localhost:8000/api/boards": read tcp 127.0.0.1:53669->127.0.0.1:8000: read: connection reset by peer
-Get "http://localhost:8000/api/boards/1/cards": read tcp 127.0.0.1:53663->127.0.0.1:8000: read: connection reset by peer
-Get "http://localhost:8000/api/boards/1/cards": read tcp 127.0.0.1:64193->127.0.0.1:8000: read: connection reset by peer
-Get "http://localhost:8000/api/boards/1/cards": read tcp 127.0.0.1:64187->127.0.0.1:8000: read: connection reset by peer
-Get "http://localhost:8000/api/boards/1/summary": read tcp 127.0.0.1:64191->127.0.0.1:8000: read: connection reset by peer
