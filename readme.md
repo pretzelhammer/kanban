@@ -6,39 +6,13 @@ This is the companion code repository for the article [RESTful API in Sync & Asy
 
 Each server implementation is in its own directory.
 
-Server #1: Diesel + Rocket
-- Directory: [diesel-rocket](./diesel-rocket)
-- Nickname: DR
-- Connection pool: r2d2
-- SQL executor: Diesel
-- HTTP routing: Rocket
-- Compiled with: Rust v1.53 (Nightly)
 
-Server #2: sqlx + actix-web
-- Directory: [sqlx-actix-web](./sqlx-actix-web)
-- Nickname: SA
-- Connection pool: sqlx
-- SQL executor: sqlx
-- HTTP Routing: actix-web
-- Compiled with: Rust v1.53 (Nightly)
-
-Server #3: pg-promise + express.js (single-process)
-- Directory: [pgp-express](./pgp-express)
-- Nickname: PES
-- Connection pool: pg-promise
-- SQL executor: pg-promise
-- HTTP Routing: express.js
-- Interpreted with: node.js v16.0.0
-- Mode: single-process
-
-Server #4: pg-promise + express.js (multi-process)
-- Directory: [pgp-express-multi](./pgp-express-multi)
-- Nickname: PEM
-- Connection pool: pg-promise
-- SQL executor: pg-promise
-- HTTP Routing: express.js
-- Interpreted with: node.js v16.0.0
-- Mode: multi-process
+| Server                                                         | Nickname | Connection pool | SQL executor | HTTP routing |    Compiled with     | Interpreted with |      Mode      |
+|:---------------------------------------------------------------|:--------:|:---------------:|:------------:|:------------:|:--------------------:|:----------------:|:--------------:|
+| [Diesel + Rocket](./diesel-rocket)                             |    DR    |      r2d2       |    Diesel    |    Rocket    | Rust v1.53 (Nightly) |                  |                |
+| [sqlx + actix-web](./sqlx-actix-web)                           |    SA    |      sqlx       |     sqlx     |  actix-web   | Rust v1.53 (Nightly) |                  |                |
+| [pg-promise + express.js (single-process)](./pgp-express)      |   PES    |   pg-promise    |  pg-promise  |  express.js  |                      | node.js v16.0.0  | single-process |
+| [pg-promise + express.js (multi-process)](./pgp-express-multi) |   PEM    |   pg-promise    |  pg-promise  |  express.js  |                      | node.js v16.0.0  | multi-process  |
 
 ### Benchmarks
 
